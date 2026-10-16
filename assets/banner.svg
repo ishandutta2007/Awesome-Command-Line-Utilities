@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#070a12" />
+    </linearGradient>
+
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="primaryGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="terminalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.95" />
+    </linearGradient>
+
+    <!-- Subtle Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.75" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.25; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(1.08); }
+    }
+    @keyframes floatPill1 {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-12px) translateX(6px); }
+    }
+    @keyframes floatPill2 {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(10px) translateX(-5px); }
+    }
+    @keyframes floatPill3 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes blinkCursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    @keyframes scanline {
+      0% { transform: translateY(-360px); }
+      100% { transform: translateY(360px); }
+    }
+
+    .ambient-glow {
+      animation: pulseGlow 6s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .pill-1 { animation: floatPill1 5s ease-in-out infinite; }
+    .pill-2 { animation: floatPill2 6.5s ease-in-out infinite; }
+    .pill-3 { animation: floatPill3 5.8s ease-in-out infinite; }
+    .blinking-cursor { animation: blinkCursor 1s step-end infinite; }
+    
+    .title-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      letter-spacing: -0.5px;
+      fill: #ffffff;
+    }
+    .subtitle-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      fill: #94a3b8;
+    }
+    .tagline-text {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight: 600;
+      font-size: 15px;
+      fill: #38bdf8;
+    }
+    .code-text {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 14px;
+      fill: #a5f3fc;
+    }
+    .pill-text {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="360" fill="url(#bgGrad)" rx="16" />
+  <rect width="1200" height="360" fill="url(#grid)" rx="16" />
+
+  <!-- Animated Dynamic Ambient Glows (Kept strictly behind UI/text) -->
+  <circle cx="200" cy="180" r="140" fill="#38bdf8" filter="blur(70px)" class="ambient-glow" />
+  <circle cx="1020" cy="180" r="150" fill="#a855f7" filter="blur(80px)" class="ambient-glow" />
+
+  <!-- Floating Dynamic Pills (Background decorations, positioned non-intrusively) -->
+  <g class="pill-1" opacity="0.85">
+    <rect x="940" y="45" width="180" height="36" rx="18" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5" />
+    <circle cx="960" cy="63" r="5" fill="#38bdf8" />
+    <text x="976" y="68" fill="#e2e8f0" class="pill-text">⚡ Rust &amp; Go Powered</text>
+  </g>
+
+  <g class="pill-2" opacity="0.85">
+    <rect x="910" y="275" width="220" height="36" rx="18" fill="#1e293b" stroke="#818cf8" stroke-width="1.5" />
+    <circle cx="930" cy="293" r="5" fill="#818cf8" />
+    <text x="946" y="298" fill="#e2e8f0" class="pill-text">🧠 AI-Native Terminal Tools</text>
+  </g>
+
+  <g class="pill-3" opacity="0.8">
+    <rect x="70" y="285" width="190" height="34" rx="17" fill="#1e293b" stroke="#c084fc" stroke-width="1.2" />
+    <circle cx="88" cy="302" r="4.5" fill="#c084fc" />
+    <text x="102" y="306" fill="#cbd5e1" class="pill-text">🔥 GPU-Accelerated CLIs</text>
+  </g>
+
+  <!-- Central Foreground Interactive Terminal Card -->
+  <g transform="translate(180, 50)">
+    <!-- Terminal Window Container -->
+    <rect width="840" height="260" rx="12" fill="url(#terminalGrad)" stroke="#334155" stroke-width="1.5" filter="drop-shadow(0 20px 25px rgba(0, 0, 0, 0.45))" />
+    
+    <!-- Window Header -->
+    <path d="M 0 12 Q 0 0 12 0 L 828 0 Q 840 0 840 12 L 840 40 L 0 40 Z" fill="#1e293b" />
+    <circle cx="24" cy="20" r="6" fill="#ef4444" />
+    <circle cx="44" cy="20" r="6" fill="#f59e0b" />
+    <circle cx="64" cy="20" r="6" fill="#10b981" />
+    <text x="420" y="25" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600" text-anchor="middle">terminal ~ awesome-command-line-utilities</text>
+
+    <!-- Foreground Main Title & Subtitle (High contrast, clearly visible) -->
+    <text x="420" y="105" text-anchor="middle" class="title-text">Awesome Command Line Utilities</text>
+    
+    <!-- Gradient separator line -->
+    <rect x="220" y="122" width="400" height="3" rx="1.5" fill="url(#primaryGlow)" />
+
+    <text x="420" y="156" text-anchor="middle" class="subtitle-text">Curated Elite SaaS Platforms &amp; Modern Open-Source CLI Power Tools</text>
+
+    <!-- Terminal Command Line Prompt Box -->
+    <g transform="translate(140, 185)">
+      <rect width="560" height="42" rx="8" fill="#090d16" stroke="#1e293b" stroke-width="1.2" />
+      <text x="18" y="26" class="code-text" fill="#38bdf8">❯</text>
+      <text x="36" y="26" class="code-text" fill="#34d399">brew</text>
+      <text x="75" y="26" class="code-text">install ripgrep fzf bat zoxide starship lazygit</text>
+      <rect x="502" y="14" width="8" height="17" fill="#38bdf8" class="blinking-cursor" />
+    </g>
+  </g>
+</svg>
