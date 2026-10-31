@@ -85,6 +85,7 @@ The following modern open-source command-line utilities, fuzzy searchers, shell 
 - **[xh](https://github.com/ducaale/xh)** [![Stars](https://img.shields.io/github/stars/ducaale/xh?style=social&color=white)](https://github.com/ducaale/xh/stargazers) — Friendly and fast tool for sending HTTP requests, written in Rust with native HTTP/2 support.
 - **[sd](https://github.com/chmln/sd)** [![Stars](https://img.shields.io/github/stars/chmln/sd?style=social&color=white)](https://github.com/chmln/sd/stargazers) — Intuitive `find & replace` CLI tool alternative to sed with standard regex syntax.
 - **[Tealdeer](https://github.com/dbrgn/tealdeer)** [![Stars](https://img.shields.io/github/stars/dbrgn/tealdeer?style=social&color=white)](https://github.com/dbrgn/tealdeer/stargazers) — Very fast implementation of `tldr` in Rust providing practical, example-based cheat-sheets for commands.
+- **[Kilobat CLI](https://github.com/seifip/kilobat-cli)** [![Stars](https://img.shields.io/github/stars/seifip/kilobat-cli?style=social&color=white)](https://github.com/seifip/kilobat-cli/stargazers) — macOS network diagnostics with host checks and JSON output.
 - **[The Bleep](https://github.com/stamparm/thebleep)** [![Stars](https://img.shields.io/github/stars/stamparm/thebleep?style=social&color=white)](https://github.com/stamparm/thebleep/stargazers) — Safe-by-default successor to The Fuck that asks before executing suggested command fixes.
 
 ---
